@@ -1,0 +1,468 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-20 11:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: crm/admin.py:13
+msgid "All selected publication should belong to the selected publisher."
+msgstr ""
+
+#: crm/models.py:65
+msgid "Ads non-revenue discount percentage"
+msgstr ""
+
+#: crm/models.py:66
+msgid ""
+"Discount for processing of non-revenue ads. Applied as a percentage to all "
+"ads. Decimal value in range [0-100]"
+msgstr ""
+
+#: crm/models.py:70
+msgid "General discount percentage"
+msgstr ""
+
+#: crm/models.py:71
+msgid ""
+"Discount percentage applied to all billed AdFusion items. Decimal value in "
+"range [0-100]"
+msgstr ""
+
+#: crm/models.py:78
+msgid "Only published ads with revenue"
+msgstr ""
+
+#: crm/models.py:79
+msgid "All ads"
+msgstr ""
+
+#: crm/models.py:101
+msgid "All pages of edition."
+msgstr ""
+
+#: crm/models.py:102
+msgid "Only news pages."
+msgstr ""
+
+#: crm/models.py:142
+msgid "AdFusion"
+msgstr ""
+
+#: crm/models.py:143
+msgid "NewsFusion"
+msgstr ""
+
+#: crm/models.py:151
+msgid "Pending"
+msgstr ""
+
+#: crm/models.py:152
+msgid "Cancelled"
+msgstr ""
+
+#: crm/models.py:153
+msgid "Paid"
+msgstr ""
+
+#: notifications/messages.py:230
+msgid "Schedule missed."
+msgstr ""
+
+#: notifications/messages.py:231
+msgid "Schedule missed for publication."
+msgstr ""
+
+#: portal/models.py:198
+msgid "Admin"
+msgstr ""
+
+#: portal/models.py:199
+msgid "File Uploader"
+msgstr ""
+
+#: portal/models.py:216
+msgid "Boolean"
+msgstr ""
+
+#: portal/models.py:217
+msgid "String"
+msgstr ""
+
+#: portal/models.py:218
+msgid "Integer"
+msgstr ""
+
+#: portal/models.py:219
+msgid "Float"
+msgstr ""
+
+#: portal/models.py:220
+msgid "List"
+msgstr ""
+
+#: settings/base.py:123
+msgid "English"
+msgstr ""
+
+#: settings/base.py:124
+msgid "German"
+msgstr ""
+
+#: settings/base.py:125
+msgid "French"
+msgstr ""
+
+#: status/file_router.py:23
+msgid "File name pattern match."
+msgstr ""
+
+#: status/file_router.py:24
+msgid "File name pattern match. Service handler started."
+msgstr ""
+
+#: status/file_router.py:42 status/file_router.py:91 status/file_router.py:109
+msgid "Service call start."
+msgstr ""
+
+#: status/file_router.py:43
+msgid "File upload to sftp started."
+msgstr ""
+
+#: status/file_router.py:68
+msgid "File has no publication."
+msgstr ""
+
+#: status/file_router.py:69
+msgid "File has no publication. Can't push to AboDB because of this."
+msgstr ""
+
+#: status/file_router.py:79
+msgid "File's publication has no code."
+msgstr ""
+
+#: status/file_router.py:80
+msgid "File's publication has no code. Can't push to AboDB because of this."
+msgstr ""
+
+#: status/file_router.py:92
+msgid "File upload to Abo DB started."
+msgstr ""
+
+#: status/file_router.py:110
+msgid "File upload to Paperlit started."
+msgstr ""
+
+#: status/file_router.py:132
+msgid "Service call success."
+msgstr ""
+
+#: status/file_router.py:137
+msgid "Service call error."
+msgstr ""
+
+#: status/models.py:32
+msgid "Success"
+msgstr ""
+
+#: status/models.py:33
+msgid "In progress"
+msgstr ""
+
+#: status/models.py:34 status/serializers.py:225
+msgid "Error"
+msgstr ""
+
+#: status/models.py:54
+msgid "Info"
+msgstr ""
+
+#: status/models.py:55
+msgid "Low"
+msgstr ""
+
+#: status/models.py:56
+msgid "Medium"
+msgstr ""
+
+#: status/models.py:57
+msgid "High"
+msgstr ""
+
+#: status/models.py:58
+msgid "Critical"
+msgstr ""
+
+#: status/models.py:76
+msgid "File Upload"
+msgstr ""
+
+#: status/models.py:77
+msgid "File Processing"
+msgstr ""
+
+#: status/models.py:78
+msgid "User input needed"
+msgstr ""
+
+#: status/models.py:79
+msgid "Edition published"
+msgstr ""
+
+#: status/models.py:80
+msgid "Schedule missed"
+msgstr ""
+
+#: status/models.py:95
+msgid "Email"
+msgstr ""
+
+#: status/models.py:96
+msgid "SMS"
+msgstr ""
+
+#: status/models.py:144
+msgid "SFTP"
+msgstr ""
+
+#: status/models.py:145
+msgid "AboDB"
+msgstr ""
+
+#: status/models.py:146
+msgid "Paperlit"
+msgstr ""
+
+#: status/models.py:163
+msgid "Service Created"
+msgstr ""
+
+#: status/models.py:164
+msgid "Service created successfully."
+msgstr ""
+
+#: status/models.py:173
+msgid "Service Updated"
+msgstr ""
+
+#: status/models.py:174
+msgid "Service updated successfully."
+msgstr ""
+
+#: status/models.py:245
+msgid "Edition"
+msgstr ""
+
+#: status/models.py:246
+msgid "Subscriptions"
+msgstr ""
+
+#: status/models.py:363
+msgid "Cannot save object without a \"Publication\"."
+msgstr ""
+
+#: status/serializers.py:188
+msgid "The file name for uploaded file "
+msgstr ""
+
+#: status/serializers.py:192
+msgid "Edition date for uploaded file "
+msgstr ""
+
+#: status/serializers.py:226
+msgid "File"
+msgstr ""
+
+#: status/serializers.py:230
+msgid "Edition date"
+msgstr ""
+
+#: status/serializers.py:268
+msgid "The Edition date for the uploaded file "
+msgstr ""
+
+#: status/signals.py:20
+msgid "File uploaded"
+msgstr ""
+
+#: status/signals.py:21
+msgid "File uploaded successfully."
+msgstr ""
+
+#: status/signals.py:32
+msgid "File Updated"
+msgstr ""
+
+#: status/signals.py:33
+msgid "File updated successfully."
+msgstr ""
+
+#: status/views.py:89
+msgid "Not found"
+msgstr ""
+
+#: templates/invoices/invoice_adfusion.html:7
+#: templates/invoices/invoice_newsfusion.html:7
+msgid "Description"
+msgstr "Beschreibung"
+
+#: templates/invoices/invoice_adfusion.html:9
+#: templates/invoices/invoice_adfusion.html:112
+msgid "# Ads"
+msgstr "# Inserate"
+
+#: templates/invoices/invoice_adfusion.html:11
+#: templates/invoices/invoice_adfusion.html:102
+msgid "Processing fee per ad"
+msgstr "Prozessierungs-Gebühr pro Inserat"
+
+#: templates/invoices/invoice_adfusion.html:12
+#: templates/invoices/invoice_adfusion.html:74
+#: templates/invoices/invoice_adfusion.html:113
+#: templates/invoices/invoice_adfusion.html:126
+#: templates/invoices/invoice_newsfusion.html:12
+#: templates/invoices/invoice_newsfusion.html:49
+#: templates/invoices/invoice_newsfusion.html:88
+#: templates/invoices/invoice_newsfusion.html:101
+msgid "Total"
+msgstr "Total"
+
+#: templates/invoices/invoice_adfusion.html:18
+msgid "Monthly base fee"
+msgstr "Monatliche Basisgebühr"
+
+#: templates/invoices/invoice_adfusion.html:27
+#: templates/invoices/invoice_adfusion.html:97
+msgid "Allmedia ad processing"
+msgstr "Allmedia Inserate Prozessierung"
+
+#: templates/invoices/invoice_adfusion.html:36
+msgid "Discount for filler, own and donation ads"
+msgstr "Abzug für Füller-, Eigen-, & Spendeninserate"
+
+#: templates/invoices/invoice_adfusion.html:45
+#: templates/invoices/invoice_adfusion.html:60
+#: templates/invoices/invoice_newsfusion.html:35
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#: templates/invoices/invoice_adfusion.html:52
+#: templates/invoices/invoice_newsfusion.html:27
+msgid "Minus discount"
+msgstr "abzüglich Rabatt"
+
+#: templates/invoices/invoice_adfusion.html:67
+#: templates/invoices/invoice_newsfusion.html:42
+msgid "VAT"
+msgstr "MwSt."
+
+#: templates/invoices/invoice_adfusion.html:81
+#: templates/invoices/invoice_newsfusion.html:56
+msgid "Total rounded"
+msgstr "Total gerundet"
+
+#: templates/invoices/invoice_newsfusion.html:9
+#: templates/invoices/invoice_newsfusion.html:87
+msgid "# Pages"
+msgstr "# Seiten"
+
+#: templates/invoices/invoice_newsfusion.html:11
+#: templates/invoices/invoice_newsfusion.html:77
+msgid "Processing fee per page"
+msgstr "Prozessierungsgebühr pro Seite"
+
+#: templates/invoices/invoice_newsfusion.html:18
+#: templates/invoices/invoice_newsfusion.html:72
+msgid "News Processing"
+msgstr "News Prozessierung"
+
+#: templates/invoices/invoice_payment_info.html:4
+msgid "Please transfer the indicated amount to the following account"
+msgstr "Bitte überweisen Sie den genannten Betrag auf folgende Kontoangaben"
+
+#: templates/invoices/invoice_payment_info.html:8
+msgid "In favor of"
+msgstr "Zu Gunsten von"
+
+#: templates/invoices/invoice_payment_info.html:14
+msgid "Thank you for the constructive collaboration, with kind regards."
+msgstr ""
+"Herzlichen Dank für die konstruktive Zusammenarbeit und mit freundlichem "
+"Gruss."
+
+#: templates/invoices/invoice_pdf.html:15
+msgid "Contact person"
+msgstr "Kontaktperson"
+
+#: templates/invoices/invoice_pdf.html:19
+msgid "VAT number"
+msgstr "MwSt. Nr."
+
+#: templates/invoices/invoice_pdf.html:25
+msgid "Invoice"
+msgstr "Rechnung"
+
+#: templates/invoices/invoice_pdf.html:30
+msgid "Invoice number"
+msgstr "Rechnungs-Nr."
+
+#: templates/invoices/invoice_pdf.html:34
+msgid "Period"
+msgstr "Periode"
+
+#: templates/invoices/invoice_pdf.html:38
+msgid "Invoice date"
+msgstr "Rechnungsdatum"
+
+#: templates/invoices/invoice_pdf.html:42
+msgid "Due date"
+msgstr "Fälligkeitsdatum"
+
+#: templates/notifications/email-details.html:4
+msgid "Details:"
+msgstr ""
+
+#: templates/notifications/email-wrapper.html:73
+msgid "This is an automatic message. Please do not reply."
+msgstr ""
+"Dies ist eine automatische Nachricht. Bitte antworten Sie nicht auf diese "
+"Email."
+
+#: templates/notifications/event_notification/client/email_subject.html:2
+#: templates/notifications/event_notification/operations/email_subject.html:2
+#, python-format
+msgid "Notification: %(subject)s"
+msgstr ""
+
+#: templates/notifications/event_notification/operations/email_body.html:13
+msgid "Event id:"
+msgstr ""
+
+#: templates/notifications/event_notification/operations/email_body.html:17
+msgid "Status:"
+msgstr ""
+
+#: templates/notifications/event_notification/operations/email_body.html:21
+msgid "Severity:"
+msgstr ""
+
+#: templates/notifications/event_notification/operations/email_body.html:25
+msgid "Event type:"
+msgstr ""
+
+#: templates/notifications/schedule_notification/client/email_body.html:6
+msgid "Schedule missed!"
+msgstr ""

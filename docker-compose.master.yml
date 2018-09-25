@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  minio:
+    container_name: localpoint-portal-minio-dev
+    environment:
+      VIRTUAL_HOST: minio.portal.dev.localpoint-web.ch
+      LETSENCRYPT_HOST: minio.portal.dev.localpoint-web.ch
+      LETSENCRYPT_EMAIL: spoveda@localpoint.ch
+
+  db:
+    container_name: localpoint-portal-db-dev
+
+  backend:
+    image: registry.consenda.com/localpoint/portal/backend:master
+    container_name: localpoint-portal-backend-dev
+    environment:
+      VIRTUAL_HOST: backend.portal.dev.localpoint-web.ch
+      ENVIRONMENT: development
+      AWS_S3_ENDPOINT_URL: https://minio.portal.dev.localpoint-web.ch
+      LETSENCRYPT_HOST: backend.portal.dev.localpoint-web.ch
+      LETSENCRYPT_EMAIL: spoveda@localpoint.ch
+      FUSION_API_BASE_URL: https://dev.localpoint.ch/fusion/api/v1/
+      PROTOCOL: https
+
+  frontend:
+    image: registry.consenda.com/localpoint/portal/frontend:master
+    container_name: localpoint-portal-frontend-dev
+    build:
+      context: ./frontend
+      args:
+        ENV_FILE: build-master.env
+    env_file:
+      - frontend/build-master.env

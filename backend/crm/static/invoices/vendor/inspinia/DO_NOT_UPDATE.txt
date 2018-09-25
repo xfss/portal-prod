@@ -1,0 +1,1 @@
+But if you do, make sure to also update all 'pattern' url paths. The $pattern-url variable is not part of the theme.

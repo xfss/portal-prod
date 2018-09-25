@@ -1,0 +1,14 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+table {
+  i.icon {
+    &.check {
+      color: @green;
+    }
+    &.exclamation.triangle {
+      color: @red;
+    }
+  }
+}

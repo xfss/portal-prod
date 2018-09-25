@@ -1,0 +1,79 @@
+version: '3'
+
+services:
+  minio:
+    image: minio/minio
+    container_name: localpoint-portal-minio
+    command: server /data
+    stop_grace_period: 3s
+    volumes:
+      - portal-minio-data:/data
+      - portal-minio-config:/root/.minio
+    ports:
+      - 9000
+  db:
+    image: postgres:alpine
+    container_name: localpoint-portal-db
+    stop_grace_period: 3s
+    environment:
+      POSTGRES_USER: "portal"
+    ports:
+      - 5432
+
+  backend:
+    build: ./backend
+    image: localpoint/portal-backend
+    container_name: localpoint-portal-backend
+    stop_grace_period: 3s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+    ports:
+      - 80
+    expose:
+      - 80
+    depends_on:
+      - minio
+      - db
+    links:
+      - db:db
+      - minio:minio
+    environment:
+      AWS_STORAGE_BUCKET_NAME: portal
+      AWS_AUTO_CREATE_BUCKET: 'true'
+      AWS_QUERYSTRING_AUTH: 'true'
+      AWS_QUERYSTRING_EXPIRE: 3600
+      DEFAULT_FROM_EMAIL: no-reply@localpoint.ch
+      MAILGUN_SENDER_DOMAIN: mg.localpoint.ch
+      MATTERMOST_CHANNEL: portal-test
+      MATTERMOST_USERNAME: Portal
+      PYTHON_AUTO_RELOAD: 0
+
+  frontend:
+    build: ./frontend
+    image: localpoint/portal-frontend
+    container_name: localpoint-portal-frontend
+    stop_grace_period: 3s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+    expose:
+      - 80
+    depends_on:
+      - backend
+    environment:
+      AXIOS_TIMEOUT: 300000
+
+volumes:
+  portal-db:
+  portal-minio-data:
+  portal-minio-config:
+
+networks:
+  default:
+    external:
+      name: nginx_proxy

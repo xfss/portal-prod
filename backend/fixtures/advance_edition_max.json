@@ -1,0 +1,10 @@
+[
+  {
+    "model": "portal.PublicationConfigRule",
+    "fields": {
+      "name": "Advance edition max",
+      "path": "advance_edition_max",
+      "type": "int"
+    }
+  }
+]

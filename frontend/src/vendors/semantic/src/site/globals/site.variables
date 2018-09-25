@@ -1,0 +1,45 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+/*-------------------
+       Fonts
+--------------------*/
+
+@fontName          : 'Open Sans';
+@fontSmoothing     : antialiased;
+
+@headerFont        : @fontName, Arial, Helvetica, sans-serif;
+@pageFont          : @fontName, Arial, Helvetica, sans-serif;
+@googleFontFamily  : 'Open+Sans:400italic,400';
+
+@googleFontName    : @fontName;
+@importGoogleFonts : true;
+@googleFontSizes   : '400,700,400italic,700italic';
+@googleSubset      : 'latin';
+
+@googleProtocol    : 'https://';
+@googleFontRequest : '@{googleFontName}:@{googleFontSizes}&subset=@{googleSubset}';
+
+
+/*---------------------------------
+       Navigation and header
+----------------------------------*/
+@mobileHeaderHeight: 50px;
+@menuItemHeight: 40px;
+
+/*---------------------------------
+        Localpoint Colors
+----------------------------------*/
+@lpLightBlue: #40a3d6;
+@lpDarkBlue: #242e59;
+@lpPink: #de348b;
+@lpYellow: #f4e128;
+@lpLightGrey: #e0e0e0;
+
+@primaryColor   : @lpDarkBlue;
+@secondaryColor : @lpLightBlue;
+@blue: @lpDarkBlue;
+@darkRed: #5d1111;
+
+@inputBorderRadius: 0;

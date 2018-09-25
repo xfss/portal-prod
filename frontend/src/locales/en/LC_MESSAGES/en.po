@@ -1,0 +1,400 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: code/src/App.vue:10
+msgid "Menu"
+msgstr "Menu"
+
+#: code/src/App.vue:19 code/src/components/Login.vue:25
+msgid "Sign in"
+msgstr "Sign in"
+
+#: code/src/App.vue:21
+msgid "File Upload"
+msgstr "File Upload"
+
+#: code/src/App.vue:22 code/src/components/FileEdit.vue:12
+#: code/src/components/FileEventsSingle.vue:12 code/src/components/Files.vue:3
+#: code/src/components/FilesAdmin.vue:3
+msgid "Files"
+msgstr "Files"
+
+#: code/src/App.vue:23
+msgid "Files - Admin"
+msgstr ""
+
+#: code/src/App.vue:24 code/src/components/Publications.vue:3
+#, fuzzy
+msgid "Publications"
+msgstr "Publication"
+
+#: code/src/App.vue:26
+msgid "New Service"
+msgstr "New Service"
+
+#: code/src/App.vue:27 code/src/components/ServiceEvents.vue:3
+#: code/src/components/Services.vue:3
+msgid "Services"
+msgstr "Services"
+
+#: code/src/App.vue:28
+msgid "All Service Events"
+msgstr "All Service Events"
+
+#: code/src/App.vue:29
+msgid "All File Events"
+msgstr "All File Events"
+
+#: code/src/App.vue:34
+msgid "Logged in as:"
+msgstr "Logged in as:"
+
+#: code/src/App.vue:37
+msgid "Sign out"
+msgstr "Sign out"
+
+#: code/src/components/FileEdit.vue:5
+msgid "Edit uploaded file"
+msgstr "Edit uploaded file"
+
+#: code/src/components/FileEdit.vue:31 code/src/components/FileEdit.vue:32
+msgid "File name"
+msgstr "File name"
+
+#: code/src/components/FileEdit.vue:35 code/src/components/FileEdit.vue:36
+#: code/src/components/FileEvents.vue:9 code/src/components/FileUpload.vue:12
+msgid "File"
+msgstr "File"
+
+#: code/src/components/FileEdit.vue:38
+#: code/src/components/PublicationEdit.vue:43
+#: code/src/components/ServiceEdit.vue:59
+msgid "Update"
+msgstr "Update"
+
+#: code/src/components/FileEdit.vue:99 code/src/components/FileUpload.vue:121
+msgid "Success!"
+msgstr "Success!"
+
+#: code/src/components/FileEvents.vue:3
+msgid "All files events"
+msgstr "All files events"
+
+#: code/src/components/FileEvents.vue:10
+#: code/src/components/FileEventsSingle.vue:29
+#: code/src/components/ServiceEvents.vue:9
+msgid "Service"
+msgstr "Service"
+
+#: code/src/components/FileEvents.vue:11 code/src/components/FileUpload.vue:8
+#: code/src/components/FilesAdmin.vue:10
+msgid "Publication"
+msgstr "Publication"
+
+#: code/src/components/FileEvents.vue:12
+#: code/src/components/FileEventsSingle.vue:30
+msgid "Subject"
+msgstr ""
+
+#: code/src/components/FileEvents.vue:13
+#: code/src/components/FileEventsSingle.vue:31
+#: code/src/components/ServiceEvents.vue:10
+msgid "Details"
+msgstr "Details"
+
+#: code/src/components/FileEvents.vue:14
+#: code/src/components/FileEventsSingle.vue:32
+#: code/src/components/ServiceEvents.vue:11
+msgid "Timestamp"
+msgstr "Timestamp"
+
+#: code/src/components/FileEvents.vue:15
+#: code/src/components/FileEventsSingle.vue:33
+#: code/src/components/ServiceEvents.vue:12
+msgid "Originator User"
+msgstr "Originator User"
+
+#: code/src/components/FileEvents.vue:16
+#: code/src/components/FileEventsSingle.vue:34
+msgid "Originator Service"
+msgstr "Originator Service"
+
+#: code/src/components/FileEvents.vue:17
+#: code/src/components/FileEventsSingle.vue:35 code/src/components/Files.vue:38
+#: code/src/components/FilesAdmin.vue:16
+#: code/src/components/ServiceEvents.vue:13 code/src/components/Services.vue:17
+msgid "Status"
+msgstr "Status"
+
+#: code/src/components/FileEventsSingle.vue:5
+msgid "File events"
+msgstr "File events"
+
+#: code/src/components/FileUpload.vue:3
+msgid "File upload"
+msgstr "File upload"
+
+#: code/src/components/FileUpload.vue:15
+msgid "Upload"
+msgstr "Upload"
+
+#: code/src/components/FileUpload.vue:79
+msgid "Please select a file to upload"
+msgstr ""
+
+#: code/src/components/FileUpload.vue:82
+msgid "Please select a publication"
+msgstr ""
+
+#: code/src/components/Files.vue:22
+#, fuzzy
+msgid "Close Events"
+msgstr "File events"
+
+#: code/src/components/Files.vue:25
+#, fuzzy
+msgid "View Events"
+msgstr "File events"
+
+#: code/src/components/Files.vue:36
+msgid "What"
+msgstr ""
+
+#: code/src/components/Files.vue:37
+msgid "Where"
+msgstr ""
+
+#: code/src/components/Files.vue:39
+#, fuzzy
+msgid "Time"
+msgstr "Timestamp"
+
+#: code/src/components/Files.vue:47
+#, fuzzy
+msgid "Portal"
+msgstr "Port"
+
+#: code/src/components/FilesAdmin.vue:9
+msgid "Filename"
+msgstr "Filename"
+
+#: code/src/components/FilesAdmin.vue:11
+msgid "Edition Date"
+msgstr "Edition Date"
+
+#: code/src/components/FilesAdmin.vue:12 code/src/components/Services.vue:13
+msgid "Created At"
+msgstr "Created At"
+
+#: code/src/components/FilesAdmin.vue:13 code/src/components/Services.vue:14
+msgid "Updated At"
+msgstr "Updated At"
+
+#: code/src/components/FilesAdmin.vue:14 code/src/components/Services.vue:15
+msgid "Creator"
+msgstr "Creator"
+
+#: code/src/components/FilesAdmin.vue:15 code/src/components/Services.vue:16
+msgid "Updater"
+msgstr "Updater"
+
+#: code/src/components/FilesAdmin.vue:17
+#: code/src/components/Publications.vue:14
+msgid "Actions"
+msgstr "Actions"
+
+#: code/src/components/FilesAdmin.vue:43
+msgid "Events"
+msgstr "Events"
+
+#: code/src/components/Login.vue:16
+#: code/src/components/services/AboDBSecureParameters.vue:6
+#: code/src/components/services/AboDBSecureParameters.vue:7
+#: code/src/components/services/SftpSecureParameters.vue:5
+#: code/src/components/services/SftpSecureParameters.vue:6
+msgid "Username"
+msgstr "Username"
+
+#: code/src/components/Login.vue:22
+msgid "Password"
+msgstr "Password"
+
+#: code/src/components/Login.vue:57
+msgid "Username must not be empty"
+msgstr ""
+
+#: code/src/components/Login.vue:59
+msgid "Password must not be empty"
+msgstr ""
+
+#: code/src/components/Login.vue:74
+msgid "Logging you in"
+msgstr "Logging you in"
+
+#: code/src/components/Logout.vue:6
+msgid "Signing out"
+msgstr "Signing out"
+
+#: code/src/components/PublicationEdit.vue:3
+#, fuzzy
+msgid "Edit Publication"
+msgstr "Publication"
+
+#: code/src/components/PublicationEdit.vue:18
+#: code/src/components/PublicationEdit.vue:19
+#: code/src/components/Publications.vue:10
+#: code/src/components/ServiceEdit.vue:18
+#: code/src/components/ServiceEdit.vue:19 code/src/components/ServiceNew.vue:18
+#: code/src/components/ServiceNew.vue:19 code/src/components/Services.vue:10
+msgid "Name"
+msgstr "Name"
+
+#: code/src/components/PublicationEdit.vue:22
+#: code/src/components/PublicationEdit.vue:23
+#: code/src/components/Publications.vue:9
+msgid "Code"
+msgstr ""
+
+#: code/src/components/PublicationEdit.vue:28
+#: code/src/components/PublicationEdit.vue:29
+#: code/src/components/ServiceEdit.vue:32
+#: code/src/components/ServiceEdit.vue:33 code/src/components/ServiceNew.vue:32
+#: code/src/components/ServiceNew.vue:33
+msgid "Filename Regex Pattern"
+msgstr "Filename Regex Pattern"
+
+#: code/src/components/PublicationEdit.vue:35
+#: code/src/components/Publications.vue:11
+msgid "Language"
+msgstr ""
+
+#: code/src/components/PublicationEdit.vue:39
+#: code/src/components/Publications.vue:12
+msgid "Timezone"
+msgstr ""
+
+#: code/src/components/Publications.vue:13
+msgid "Role"
+msgstr ""
+
+#: code/src/components/ServiceEdit.vue:3
+msgid "Edit service"
+msgstr "Edit service"
+
+#: code/src/components/ServiceEdit.vue:22
+#: code/src/components/ServiceEdit.vue:23 code/src/components/ServiceNew.vue:22
+#: code/src/components/ServiceNew.vue:23 code/src/components/Services.vue:11
+msgid "Address"
+msgstr "Address"
+
+#: code/src/components/ServiceEdit.vue:28
+#: code/src/components/ServiceEdit.vue:29 code/src/components/ServiceNew.vue:28
+#: code/src/components/ServiceNew.vue:29 code/src/components/Services.vue:12
+msgid "Port"
+msgstr "Port"
+
+#: code/src/components/ServiceEdit.vue:37 code/src/components/ServiceNew.vue:37
+msgid "Type"
+msgstr "Type"
+
+#: code/src/components/ServiceNew.vue:3
+msgid "Create new service"
+msgstr "Create new service"
+
+#: code/src/components/ServiceNew.vue:59
+msgid "Create"
+msgstr "Create"
+
+#: code/src/components/ServiceNew.vue:115
+msgid "Success"
+msgstr "Success"
+
+#: code/src/components/Unauthorized.vue:3
+msgid "Access denied"
+msgstr "Access denied"
+
+#: code/src/components/Unauthorized.vue:4
+msgid "You are unauthorized to access this page."
+msgstr "You are unauthorized to access this page."
+
+#: code/src/components/services/AboDBParameters.vue:3
+#: code/src/components/services/PaperlitParameters.vue:3
+#: code/src/components/services/SftpParameters.vue:3
+msgid "Parameters"
+msgstr "Parameters"
+
+#: code/src/components/services/AboDBParameters.vue:5
+#: code/src/components/services/AboDBParameters.vue:6
+msgid "Publisher Code"
+msgstr "Publisher Code"
+
+#: code/src/components/services/AboDBSecureParameters.vue:3
+#: code/src/components/services/PaperlitSecureParameters.vue:3
+#: code/src/components/services/SftpSecureParameters.vue:3
+msgid "Secure Parameters (Write Only)"
+msgstr "Secure Parameters (Write Only)"
+
+#: code/src/components/services/AboDBSecureParameters.vue:10
+#: code/src/components/services/AboDBSecureParameters.vue:11
+msgid "Api Key"
+msgstr "Api Key"
+
+#: code/src/components/services/PaperlitParameters.vue:6
+#: code/src/components/services/PaperlitParameters.vue:7
+msgid "Project Id"
+msgstr "Project Id"
+
+#: code/src/components/services/PaperlitParameters.vue:10
+#: code/src/components/services/PaperlitParameters.vue:11
+msgid "Publication Id"
+msgstr "Publication Id"
+
+#: code/src/components/services/PaperlitParameters.vue:14
+#: code/src/components/services/PaperlitParameters.vue:15
+msgid "Publish offset hours"
+msgstr "Publish offset hours"
+
+#: code/src/components/services/PaperlitParameters.vue:19
+msgid "Default Paid"
+msgstr "Default Paid"
+
+#: code/src/components/services/PaperlitSecureParameters.vue:6
+#: code/src/components/services/PaperlitSecureParameters.vue:7
+msgid "Api Email"
+msgstr "Api Email"
+
+#: code/src/components/services/PaperlitSecureParameters.vue:10
+#: code/src/components/services/PaperlitSecureParameters.vue:11
+msgid "Api Password"
+msgstr "Api Password"
+
+#: code/src/components/services/PaperlitSecureParameters.vue:14
+#: code/src/components/services/PaperlitSecureParameters.vue:15
+msgid "Api Company"
+msgstr "Api Company"
+
+#: code/src/components/services/SftpParameters.vue:5
+#: code/src/components/services/SftpParameters.vue:6
+msgid "Target Directory"
+msgstr "Target Directory"
+
+#: code/src/components/services/SftpParameters.vue:9
+msgid "Create Subdirectory"
+msgstr "Create Subdirectory"
+
+#: code/src/components/services/SftpSecureParameters.vue:9
+#: code/src/components/services/SftpSecureParameters.vue:10
+msgid "Private Key"
+msgstr "Private Key"
+
+#, fuzzy
+#~ msgid "Files Simple"
+#~ msgstr "File name"

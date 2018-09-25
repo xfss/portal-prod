@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Portal</title>
+  </head>
+  <style>
+    #preload-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #fbfbfb;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 500ms, visibility 500ms;
+    }
+    #preload-overlay .preload-inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    #preload-overlay.loading-fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+    #preload-overlay .preload-inner .preload-logo {
+      height: 50px;
+      width: 360px;
+      background-image: url('/static/images/localpoint-logo.svg');
+      background-repeat: no-repeat;
+    }
+    #preload-overlay .preload-inner .loader {
+      height: 100px;
+      width: 100px;
+      background-image: url('/static/images/localpoint-cube-loader.gif');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      margin: 0 auto;
+    }
+  </style>
+  <body>
+    <!-- built files will be auto injected -->
+    <div id="app"></div>
+    <div id="preload-overlay">
+      <div class="preload-inner">
+        <div class="preload-logo"></div>
+        <div class="loader"></div>
+      </div>
+    </div>
+  </body>
+</html>

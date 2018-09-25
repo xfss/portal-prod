@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  minio:
+    environment:
+      VIRTUAL_HOST: minio.portal.localpoint.local
+
+  db:
+    volumes:
+      - portal-db:/var/lib/postgresql/data
+    ports:
+      - 0.0.0.0:5432:5432
+
+  backend:
+    volumes:
+      - ./backend:/code
+    environment:
+      VIRTUAL_HOST: backend.portal.localpoint.local
+      DEBUG: 'true'
+      ENVIRONMENT: local
+      AWS_S3_ENDPOINT_URL: http://minio:9000
+      FUSION_API_BASE_URL: http://fusion.localpoint.local/api/v1/
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        ENV_FILE: build-local.env
+    volumes:
+      - ./frontend/src:/code/src
+      - ./frontend/build:/code/build
+      - ./frontend/config:/code/config
+      - ./frontend/index.html:/code/index.html
+      - ./frontend/static:/code/static
+    env_file:
+      - frontend/build-local.env

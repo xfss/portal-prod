@@ -1,0 +1,132 @@
+{% load i18n numbers nbsp %}
+
+{% with adfusion=invoice.adfusion %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>{% trans "Description" %}</th>
+            <th class="text-center">
+                {% filter nbsp %}{% trans "# Ads" %}{% endfilter %}
+            </th>
+            <th class="text-right">{% trans "Processing fee per ad" %}</th>
+            <th class="text-right">{% trans "Total" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if adfusion.monthly_base_fee %}
+            <tr>
+                <td>{% trans "Monthly base fee" %}</td>
+                <td></td>
+                <td></td>
+                <td class="text-right">{{ adfusion.monthly_base_fee|currency }}</td>
+            </tr>
+        {% endif %}
+
+        <tr>
+            <td>
+                {% filter nbsp %}{% trans "Allmedia ad processing" %}{% endfilter %}
+            </td>
+            <td class="text-center">{{ adfusion.ad_count }}</td>
+            <td class="text-right">{{ adfusion.processing_fee|currency }}</td>
+            <td class="text-right">{{ adfusion.processing_total|currency }}</td>
+        </tr>
+
+        {% if adfusion.nonrevenue_discount_total %}
+            <tr>
+                <td>{% trans "Discount for filler, own and donation ads" %} ({{ adfusion.nonrevenue_discount_pct|percentage:1 }})</td>
+                <td></td>
+                <td></td>
+                <td class="text-right">-{{ adfusion.nonrevenue_discount_total|currency }}</td>
+            </tr>
+        {% endif %}
+
+        {% if adfusion.general_discount_total %}
+            <tr>
+                <td>{% trans "Subtotal" %}</td>
+                <td></td>
+                <td></td>
+                <td class="text-right invoice-border-top">{{ adfusion.pre_general_discount_total|currency }}</td>
+            </tr>
+
+            <tr>
+                <td>{% trans "Minus discount" %} {{ adfusion.general_discount_pct|percentage:1 }}</td>
+                <td></td>
+                <td></td>
+                <td class="text-right">- {{ adfusion.general_discount_total|currency }}</td>
+            </tr>
+        {% endif %}
+
+        <tr>
+            <td>{% trans "Subtotal" %}</td>
+            <td></td>
+            <td></td>
+            <td class="text-right invoice-border-top">{{ invoice.pre_vat_total|currency }}</td>
+        </tr>
+
+        <tr>
+            <td>{% trans "VAT" %} {{ invoice.vat_pct|percentage:1 }}</td>
+            <td></td>
+            <td></td>
+            <td class="text-right">{{ invoice.vat_total|currency }}</td>
+        </tr>
+
+        <tr>
+            <td>{% trans "Total" %}</td>
+            <td></td>
+            <td></td>
+            <td class="text-right invoice-border-top">{{ invoice.exact_total|currency }}</td>
+        </tr>
+
+        <tr>
+            <td><strong>{% trans "Total rounded" %}</strong></td>
+            <td></td>
+            <td></td>
+            <td class="text-right invoice-border-top invoice-double-underline">
+                <strong>{{ invoice.final_total|currency }}</strong>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    {% include "invoices/invoice_payment_info.html" %}
+
+    <p class="invoice-page-break"></p>
+
+    <br><br>
+
+    <h2>{% trans "Allmedia ad processing" %} &mdash; {{ invoice.publication_codes|join:', '|upper }}</h2>
+
+    <br>
+
+    <div class="row">
+        <div class="col-xs-3"><strong>{% trans "Processing fee per ad" %}</strong></div>
+        <div class="col-xs-9">{{ adfusion.processing_fee|currency }}</div>
+    </div>
+
+    <br>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>{{ adfusion.invoice.invoice_start_date }} - {{ adfusion.invoice.invoice_end_date }}</th>
+            <th>{% trans "# Ads" %}</th>
+            <th class="text-right">{% trans "Total" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for day in adfusion.days.all %}
+            <tr>
+                <td>{{ day.date }}</td>
+                <td>{{ day.ad_count }}</td>
+                <td class="text-right">{{ day.processing_total|currency }}</td>
+            </tr>
+        {% endfor %}
+
+        <tr>
+            <th>{% trans "Total" %}</th>
+            <th>{{ adfusion.ad_count }}</th>
+            <th class="invoice-border-top invoice-double-underline text-right">{{ adfusion.processing_total|currency }}</th>
+        </tr>
+        </tbody>
+    </table>
+{% endwith %}

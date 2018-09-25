@@ -1,0 +1,18 @@
+#Python
+
+__pycache__
+.cache
+
+# JS
+node_modules/
+dist/
+
+# Pycharm
+.idea/
+
+*.secrets.yml
+
+staticfiles/
+
+# Compiled gettext files
+*.mo

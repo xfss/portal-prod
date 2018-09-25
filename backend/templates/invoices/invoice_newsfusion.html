@@ -1,0 +1,107 @@
+{% load i18n numbers nbsp %}
+
+{% with newsfusion=invoice.newsfusion %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>{% trans "Description" %}</th>
+            <th class="text-center">
+                {% filter nbsp %}{% trans "# Pages" %}{% endfilter %}
+            </th>
+            <th class="text-right">{% trans "Processing fee per page" %}</th>
+            <th class="text-right">{% trans "Total" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                {% filter nbsp %}{% trans "News Processing" %}{% endfilter %}
+            </td>
+            <td class="text-center">{{ newsfusion.page_count }}</td>
+            <td class="text-right">{{ newsfusion.page_fee|currency }}</td>
+            <td class="text-right">{{ newsfusion.pre_discount_total|currency }}</td>
+        </tr>
+
+        {% if newsfusion.discount_total %}
+            <tr>
+                <td>{% trans "Minus discount" %} {{ newsfusion.discount_pct|percentage:1 }}</td>
+                <td></td>
+                <td></td>
+                <td class="text-right">- {{ newsfusion.discount_total|currency }}</td>
+            </tr>
+        {% endif %}
+
+        <tr>
+            <td>{% trans "Subtotal" %}</td>
+            <td></td>
+            <td></td>
+            <td class="text-right invoice-border-top">{{ invoice.pre_vat_total|currency }}</td>
+        </tr>
+
+        <tr>
+            <td>{% trans "VAT" %} {{ invoice.vat_pct|percentage:1 }}</td>
+            <td></td>
+            <td></td>
+            <td class="text-right">{{ invoice.vat_total|currency }}</td>
+        </tr>
+
+        <tr>
+            <td>{% trans "Total" %}</td>
+            <td></td>
+            <td></td>
+            <td class="text-right invoice-border-top">{{ invoice.exact_total|currency }}</td>
+        </tr>
+
+        <tr>
+            <td><strong>{% trans "Total rounded" %}</strong></td>
+            <td></td>
+            <td></td>
+            <td class="text-right invoice-border-top invoice-double-underline">
+                <strong>{{ invoice.final_total|currency }}</strong>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    {% include "invoices/invoice_payment_info.html" %}
+
+    <p class="invoice-page-break"></p>
+
+    <br><br>
+
+    <h2>{% trans "News Processing" %} &mdash; {{ invoice.publication_codes|join:', '|upper }}</h2>
+
+    <br>
+
+    <div class="row">
+        <div class="col-xs-3"><strong>{% trans "Processing fee per page" %}</strong></div>
+        <div class="col-xs-9">{{ newsfusion.page_fee|currency }}</div>
+    </div>
+
+    <br>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>{{ newsfusion.invoice.invoice_start_date }} - {{ newsfusion.invoice.invoice_end_date }}</th>
+            <th>{% trans "# Pages" %}</th>
+            <th class="text-right">{% trans "Total" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for day in newsfusion.days.all %}
+            <tr>
+                <td>{{ day.date }}</td>
+                <td>{{ day.page_count }}</td>
+                <td class="text-right">{{ day.processing_total|currency }}</td>
+            </tr>
+        {% endfor %}
+
+        <tr>
+            <th>{% trans "Total" %}</th>
+            <th>{{ newsfusion.page_count }}</th>
+            <th class="invoice-border-top invoice-double-underline text-right">{{ newsfusion.pre_discount_total|currency }}</th>
+        </tr>
+        </tbody>
+    </table>
+{% endwith %}

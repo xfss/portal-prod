@@ -1,0 +1,58 @@
+image: kroniak/ssh-client:3.6
+
+.setup_ssh: &setup_ssh |
+  mkdir -p ~/.ssh
+  echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+  chmod 644 ~/.ssh/known_hosts
+  eval $(ssh-agent -s)
+  bash -c 'ssh-add <(echo "$SSH_PRIVATE_KEY")'
+  ssh-add -l
+
+stages:
+  - build
+  - push
+  - deploy
+
+cache:
+  key: $CI_BUILD_REF_NAME
+  paths:
+    - node_modules/
+
+build_images:
+  stage: build
+  only:
+    - /^(master|prod)$/
+  script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.consenda.com
+    - docker build -t registry.consenda.com/localpoint/portal/backend:$CI_COMMIT_REF_NAME backend
+    - docker build --build-arg ENV_FILE=build-$CI_COMMIT_REF_NAME.env -t registry.consenda.com/localpoint/portal/frontend:$CI_COMMIT_REF_NAME frontend
+
+push_images_registry:
+  stage: push
+  only:
+    - /^(master|prod)$/
+  script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.consenda.com
+    - docker push registry.consenda.com/localpoint/portal/backend:$CI_COMMIT_REF_NAME
+    - docker push registry.consenda.com/localpoint/portal/frontend:$CI_COMMIT_REF_NAME
+
+
+deploy_dev:
+  stage: deploy
+  only:
+    - master
+  tags:
+    - docker
+  script:
+    - *setup_ssh
+    - ./deploy.sh portal.dev.localpoint-web.ch dev
+
+deploy_prod:
+  stage: deploy
+  only:
+    - prod
+  tags:
+    - docker
+  script: 
+    - *setup_ssh
+    - ./deploy.sh portal.localpoint.ch prod

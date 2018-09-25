@@ -1,0 +1,49 @@
+{% load static i18n compress %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LocalPoint</title>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {% block stylesheets %}
+            {% compress css %}
+                <link rel="stylesheet" type="text/x-scss" href="{% static "invoices/css/styles.scss" %}">
+            {% endcompress %}
+
+            <style>
+            @page {
+                size: A4;
+                margin-top: 130px;
+                margin-bottom: 90px;
+            }
+            </style>
+        {% endblock %}
+    </head>
+    <body class="invoice-document">
+        {% block header %}
+            <header class="header">
+                {% block header_logo %}
+                    <img src="{% static "invoices/images/consenda-localpoint.png" %}">
+                {% endblock %}
+            </header>
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+
+        {% block footer %}
+            <p class="text-center footer">
+                <small class="text-muted">
+                    Consenda AG<br>
+                    Dufourstrasse 90, CH-8008 Zürich<br>
+                    T +41.44.542 32 75 www.consenda.com<br>
+                    MwSt. Nr. CHE-113.570.773<br>
+                </small>
+            </p>
+        {% endblock %}
+    </body>
+</html>

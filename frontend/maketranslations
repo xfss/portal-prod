@@ -1,0 +1,30 @@
+#!/bin/sh
+# Extract translations from project and create *.po files
+
+# Set allowed languages in `package.json`
+LOCALES=$(node -e "console.log(require('/code/package.json').localpoint.locales.join(' '));")
+SRC_DIR="/code/src"
+GETTEXT_JS_SOURCES=$(find $SRC_DIR -name '*.vue' -o -name '*.js' ! -path "$SRC_DIR/vendors/*")
+TEMPLATE_PO=/tmp/template.po
+TRANSLATION_JSON="$SRC_DIR/localization/translations.json"
+
+# `xgettext-template` finds the `$t` tag used by `vue-i18n`
+for lang in $LOCALES; do
+  cd / && xgettext-template -L Vue \
+  --from-code=utf-8 \
+  --output $TEMPLATE_PO $GETTEXT_JS_SOURCES
+
+  PO_FILE="$SRC_DIR/locales/$lang/LC_MESSAGES/$lang.po"
+  mkdir -p $(dirname $PO_FILE);
+  if [ -f $PO_FILE ]; then
+    # Update translations for each language if po file already exists
+    msgmerge --lang=$lang --update --no-wrap --sort-by-file $PO_FILE $TEMPLATE_PO
+  else
+    # Else create a new po file for each language based on template
+    msginit --no-translator --locale=$lang --input=$TEMPLATE_PO --output-file=$PO_FILE;
+  fi
+done
+
+LOCALE_FILES=$(find "$SRC_DIR/locales" -name '*.po')
+
+gettext-compile --output $TRANSLATION_JSON $LOCALE_FILES

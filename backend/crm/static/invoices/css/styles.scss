@@ -1,0 +1,11 @@
+@import "../vendor/bootstrap-sass-3.3.6/stylesheets/bootstrap";
+@import "../vendor/inspinia/scss/style.scss";
+@import "../vendor/_select2-bootstrap.scss";
+@import "_select2.scss";
+@import "_invoices.scss";
+
+.form-inline {
+    display: inline-block;
+}
+
+

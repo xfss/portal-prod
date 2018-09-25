@@ -1,0 +1,2 @@
+nginx: nginx
+uwsgi: uwsgi --ini /etc/uwsgi/web.ini

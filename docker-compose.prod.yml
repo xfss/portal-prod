@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  minio:
+    container_name: localpoint-portal-minio-prod
+    environment:
+      VIRTUAL_HOST: minio.portal.localpoint.ch
+      LETSENCRYPT_HOST: minio.portal.localpoint.ch
+      LETSENCRYPT_EMAIL: spoveda@localpoint.ch
+
+  db:
+    container_name: localpoint-portal-db-prod
+
+  backend:
+    image: registry.consenda.com/localpoint/portal/backend:prod
+    container_name: localpoint-portal-backend-prod
+    environment:
+      VIRTUAL_HOST: backend.portal.localpoint.ch
+      ENVIRONMENT: production
+      AWS_S3_ENDPOINT_URL: https://minio.portal.localpoint.ch
+      LETSENCRYPT_HOST: backend.portal.localpoint.ch
+      LETSENCRYPT_EMAIL: spoveda@localpoint.ch
+      MATTERMOST_CHANNEL: notifications-portal
+      FUSION_API_BASE_URL: https://fusion.localpoint.ch/api/v1/
+      PROTOCOL: https
+
+  frontend:
+    image: registry.consenda.com/localpoint/portal/frontend:prod
+    container_name: localpoint-portal-frontend-prod
+    build:
+      context: ./frontend
+      args:
+        ENV_FILE: build-prod.env
+    env_file:
+      - frontend/build-prod.env

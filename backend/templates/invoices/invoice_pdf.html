@@ -1,0 +1,57 @@
+{% extends "invoices/layout_pdf.html" %}
+
+{% block content %}
+    {% load i18n numbers %}
+
+    <br>
+    {{ invoice.publisher.name|linebreaksbr }}
+    <br>
+    {{ invoice.publication_names|join:', ' }}
+    <br>
+    {{ invoice.contact_salutation }} {{ invoice.contact_full_name|linebreaksbr }}
+    <br>
+    {{ invoice.contact_billing_address|default_if_none:""|linebreaksbr }}
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-xs-3"><strong>{% trans "Contact person" %}</strong></div>
+        <div class="col-xs-9">{{ invoice.contact_full_name }}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3"><strong>{% trans "VAT number" %}</strong></div>
+        <div class="col-xs-9">{{ invoice.vat_number }}</div>
+    </div>
+
+    <br>
+
+    <h2>{% trans "Invoice" %}</h2>
+
+    <br>
+
+    <div class="row">
+        <div class="col-xs-3"><strong>{% trans "Invoice number" %}</strong></div>
+        <div class="col-xs-9">{{ invoice.invoice_number }}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3"><strong>{% trans "Period" %}</strong></div>
+        <div class="col-xs-9">{{ invoice.invoice_start_date }} - {{ invoice.invoice_end_date }}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3"><strong>{% trans "Invoice date" %}</strong></div>
+        <div class="col-xs-9">{{ invoice.invoice_date }}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3"><strong>{% trans "Due date" %}</strong></div>
+        <div class="col-xs-9"><strong>{{ invoice.invoice_due_date }}</strong></div>
+    </div>
+
+    <br>
+
+    {% if invoice.is_adfusion %}
+        {% include "invoices/invoice_adfusion.html" with invoice=invoice %}
+    {% elif invoice.is_newsfusion %}
+        {% include "invoices/invoice_newsfusion.html" with invoice=invoice %}
+    {% endif %}
+
+{% endblock %}

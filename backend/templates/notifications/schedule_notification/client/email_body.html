@@ -1,0 +1,10 @@
+{% extends 'notifications/email-wrapper.html' %}
+{% load i18n %}
+{% block email_message %}
+<tr>
+  <td>
+    <h4 style="text-align: center;">{% trans 'Schedule missed!' %}</h4>
+  </td>
+</tr>
+{% include 'notifications/email-details.html' %}
+{% endblock %}

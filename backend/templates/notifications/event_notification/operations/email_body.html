@@ -1,0 +1,32 @@
+{% extends 'notifications/email-wrapper.html' %}
+{% load i18n %}
+{% block email_message %}
+<tr>
+  <td>
+    <h4 style="text-align: center;">{% include './email_subject.html' %}</h4>
+  </td>
+</tr>
+<tr>
+  <td>
+    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; font-size: 12px; margin: 0 auto 15px; background-color: #FFFFFF;">
+      <tr>
+        <td style="padding: 5px 15px; border: 1px solid #777777;">{% trans 'Event id:' %}</td>
+        <td style="padding: 5px 15px; border: 1px solid #777777;">{{ id }}</td>
+      </tr>
+      <tr>
+        <td style="padding: 5px 15px; border: 1px solid #777777;">{% trans 'Status:' %}</td>
+        <td style="padding: 5px 15px; border: 1px solid #777777; background-color: {{ status_color }};">{{ status }}</td>
+      </tr>
+      <tr>
+        <td style="padding: 5px 15px; border: 1px solid #777777;">{% trans 'Severity:' %}</td>
+        <td style="padding: 5px 15px; border: 1px solid #777777; background-color: {{ severity_color }};">{{ severity }}</td>
+      </tr>
+      <tr>
+        <td style="padding: 5px 15px; border: 1px solid #777777;">{% trans 'Event type:' %}</td>
+        <td style="padding: 5px 15px; border: 1px solid #777777;">{{ event_type }}</td>
+      </tr>
+    </table>
+  </td>
+</tr>
+{% include 'notifications/email-details.html' %}
+{% endblock %}

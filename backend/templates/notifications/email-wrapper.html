@@ -1,0 +1,82 @@
+{% load i18n %}
+{% language language %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <!--[if !mso]><!-- -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <!--<![endif]-->
+  <!--[if mso]>
+  <style type="text/css">
+  body, table, td {font-family: Arial, Helvetica, sans-serif !important;}
+  #footer a {color: #fff; text-decoration: none;}
+  font {display: none;}
+  </style>
+  <![endif]-->
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="body" style="font-family: 'Open Sans', Arial, sans-serif; font-size: 12px; background-color: #f3f3f3;">
+  <tr>
+    <td align="center" valign="top">
+      <table border="0" cellpadding="20" cellspacing="0" width="100%" id="header" style="background-color: #fff; ">
+        <tr>
+          <td align="center" valign="top" style="padding: 15px; text-align: center; border-bottom: 8px solid #242e59;" >
+            <img src="cid:{{ logo_cid }}" alt="Logo" style="max-width: 100%;" />
+          </td>
+        </tr>
+      </table>
+      <table id="main" style="padding-top: 50px; padding-bottom: 50px; font-size: 12px;">
+        <tr>
+          <td>
+            <table border="0" cellpadding="0" cellspacing="0">
+              {% block email_message %}
+              {% endblock %}
+            </table>
+          </td>
+        </tr>
+      </table>
+      <table border="0" cellpadding="5" cellspacing="0" width="100%" style="text-align: center; background-color: #242e59; color: #fff; padding: 15px;" id="footer">
+        <tr>
+          <td>
+            <table style="vertical-align: middle; margin: 0 auto; text-align: left; font-size: 12px; color: #fff;">
+              <tr>
+                <td style="width: 20px; max-width: 20px; min-width: 20px;">
+                  <img src="cid:{{ icon_address }}" style="width: 14px" width="14" height="14" />
+                </td>
+                <td style="text-align: left;">
+                  <span>{{ localpoint_address }}</span>
+                </td>
+              </tr>
+              <tr>
+                <td style="width: 20px; max-width: 20px; min-width: 20px;">
+                  <img src="cid:{{ icon_phone }}" style="width: 14px" width="14" height="14" />
+                </td>
+                <td style="text-align: left;">
+                  <span>{{ localpoint_phone }}</span>
+                </td>
+              </tr>
+              <tr>
+                <td style="width: 20px; max-width: 20px; min-width: 20px;">
+                  <img src="cid:{{ icon_email }}" style="width: 14px" width="14" height="14" />
+                </td>
+                <td style="text-align: left;">
+                  <span><font style="display: none">@</font>{{ localpoint_email }}</span>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <table border="0" cellpadding="20" cellspacing="0" width="100%" style="text-align: center; background-color: #242e59; color: #fff; font-size: 12px;" id="sub-footer">
+        <tr>
+          <td align="center" valign="top" style="padding: 15px;">
+            <p style="font-weight: bold;">{% trans "This is an automatic message. Please do not reply." %}</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
+{% endlanguage %}
